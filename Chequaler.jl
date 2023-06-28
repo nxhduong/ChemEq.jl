@@ -1,6 +1,6 @@
-#==Balancing substance equations programmatically================================
+#==Balancing chemical equations programmatically================================
 
-To balance a substance equation using matrix operations, we first need to represent the equation as a system of linear equations. 
+To balance a chemical equation using matrix operations, we first need to represent the equation as a system of linear equations. 
 We can do this by creating a matrix that represents the coefficients of the elements in each compound. 
 For example, consider the equation `CH4 + O2 -> CO2 + H2O`. We can represent this equation as a system of linear equations:
 
