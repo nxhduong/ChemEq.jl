@@ -136,7 +136,7 @@ function balance(equation::String)
     return join(substances, " : ")
 end
 
-println("** [substance Equations Balancer] **")
+println("** [Chemical Equations Balancer] **")
 println("###################################")
 println(" - Spaces required around \"+\"")
 println(" - Two-letter elements only")
