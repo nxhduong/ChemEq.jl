@@ -41,7 +41,7 @@ function balance(equation::String)
         return "Invalid equation"
     end
 
-    invalidChars = split("`~!@#\$%^&*_-[]\\{}|;':\",./<>?")
+    invalidChars::Array{SubString{String}} = split("`~!@#\$%^&*_-[]\\{}|;':\",./<>?")
 
     for sign in invalidChars
         if occursin(sign, equation)
@@ -50,7 +50,7 @@ function balance(equation::String)
     end
 
     # Add elements to Set
-    elements = Set()
+    elements::Set = Set()
 
     for i in eachindex(equation)
         if i < length(equation)
@@ -69,9 +69,9 @@ function balance(equation::String)
     end
     
     # Count elements
-    equalSign = findfirst("=", equation)[1]
-    substances = split(equation, r"[\+\=]")
-    linearEqs = zeros(Int64, length(elements), length(substances))
+    equalSign::Int = findfirst("=", equation)[1]
+    substances::Array = split(equation, r"[\+\=]")
+    linearEqs::Matrix = zeros(Int64, length(elements), length(substances))
     i = 1
 
     for element in elements
@@ -124,9 +124,12 @@ function balance(equation::String)
         i += 1
     end
 
-    # Nullspace
-    # TODO: round numbers
+    # Nullspace and round numbers
     coeffs = nullspace(linearEqs)
+    minCoeff = min(coeffs...)
+    for i in eachindex(coeffs)
+        coeffs[i] = round(coeffs[i] * 1 / minCoeff, sigdigits=3)
+    end
 
     # Return balanced equation
     for i in eachindex(substances)
@@ -147,7 +150,7 @@ println("-----------------------------------")
 println("E.g. CH4 + O2 = CO2 + H2O")
 println("-----------------------------------")
 print("Enter equation: ")
-# input = readline()
+input = readline()
 println("___________________________________")
 println("+ Result:")
 println("___________________________________")
@@ -155,4 +158,4 @@ println("___________________________________")
 
 # Examples
 # println(balance("CH4 + O2 = CO2 + H2O"))
-println(balance("Cu + HNO3 = Cu(NO3)2 + NO + H2O"))
+# println(@time balance("Cu + HNO3 = Cu(NO3)2 + NO + H2O"))
