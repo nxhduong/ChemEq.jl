@@ -1,1 +1,1 @@
-# Chequaler
+# ChemEq
