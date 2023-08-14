@@ -1,5 +1,5 @@
 # ChemEq.jl
-A simple command-line chemical equations balancer, written in Julia
+A simple command-line chemical equations balancer, written in Julia.
 ## Requirements
 - Julia
 ## Usage
