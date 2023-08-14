@@ -1,0 +1,4 @@
+name = "ChemEq"
+uuid = "e7b5cf83-3bfa-490b-a279-95edd37bd697"
+authors = ["nxhduong <duong70@gmail.com>"]
+version = "0.1.0"
