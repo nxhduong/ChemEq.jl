@@ -41,7 +41,7 @@ function balance(equation::String)
         return "Invalid equation"
     end
     if occursin("+", equation) && !occursin(" + ", equation)
-        return "Spaces are required arounf \"+\""
+        return "Spaces are required around \"+\""
     end
 
     equation = replace(equation, "[" => "(", "]" => ")", "{" => "(", "}" => ")")
