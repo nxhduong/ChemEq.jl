@@ -32,7 +32,7 @@ The nullspace of a matrix is the set of all vectors that, when multiplied by the
 In other words, we're looking for the values of `x`, `y`, `z`, and `w` that satisfy the system of linear equations.
 
 ===============================================================================#
-
+module ChemEq
 using LinearAlgebra
 
 function balance(equation::String)
@@ -144,6 +144,9 @@ function balance(equation::String)
     return join(substances, " : ")
 end
 
+export balance
+end
+
 println("** [Chemical Equations Balancer] **")
 println("###################################")
 println(" - Spaces required around \"+\"")
@@ -158,5 +161,5 @@ input = readline()
 println("___________________________________")
 println("+ Result:")
 println("___________________________________")
-println(balance(input))
+println(ChemEq.balance(input))
 
