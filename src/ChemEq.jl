@@ -85,7 +85,6 @@ function balance(equation::String)
             count = 0
 
             for index in occurences
-                leftParens = 0
                 skip = 0
                 subCount = 1
 
@@ -95,12 +94,6 @@ function balance(equation::String)
                         break
                     elseif tryparse(Int128, string(substances[x][j])) === nothing
                         break
-                    end
-                end
-
-                for j in index[1]:-1:1
-                    if substances[x][j] == '('
-                        leftParens += 1
                     end
                 end
 
