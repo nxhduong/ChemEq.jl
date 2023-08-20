@@ -1,4 +1,6 @@
 # ChemEq.jl
+**[⚠THIS PROJECT IS NOW ABANDONED IN FAVOR OF MY MORE COMPLETE PYTHON ONE]**
+
 A simple command-line chemical equations balancer, written in Julia.
 ## Requirements
 - Julia
